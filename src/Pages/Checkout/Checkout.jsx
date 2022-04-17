@@ -32,7 +32,7 @@ const Checkout = () => {
     return (
         <div className='form-container'>
             <div style={{ width: "450px" }} className="form mx-auto border-primary border p-4 rounded-3">
-                <h3 className='heading text-center'>Please Sign Up</h3>
+                <h3 className='heading text-center my-4'>Please Provide info to Checkout</h3>
                 <Form className="mx-auto text-start" onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Name</Form.Label>

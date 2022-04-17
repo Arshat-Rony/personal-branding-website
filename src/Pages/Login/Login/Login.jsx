@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from "../../../images/others/google.png"
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
@@ -10,6 +10,9 @@ import auth from '../../../firebse.init';
 const Login = () => {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
+    const location = useLocation()
+    const navigate = useNavigate()
+    let from = location.state?.from?.pathname || '/'
     const [signInWithGoogle, googleError] = useSignInWithGoogle(auth, { sendEmailVerification: true });
     const [sendEmailVerification] = useSendEmailVerification(
         auth
@@ -30,12 +33,15 @@ const Login = () => {
     const handleSubmit = e => {
         e.preventDefault()
         signInWithEmailAndPassword(email, pass)
+            .then(ers => {
+                navigate(from, { replace: true });
+            })
     }
     const handleGoogle = async (e) => {
         e.preventDefault()
         await signInWithGoogle()
             .then(res => {
-                console.log("user created")
+                navigate(from, { replace: true });
             })
         await sendEmailVerification()
     }

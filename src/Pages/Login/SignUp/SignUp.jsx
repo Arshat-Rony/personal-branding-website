@@ -8,12 +8,15 @@ import './SignUp.css'
 import { sendEmailVerification, sendPasswordResetEmail } from 'firebase/auth';
 
 import { useSendEmailVerification } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { async } from '@firebase/util';
 
 const SignUp = () => {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
+    const location = useLocation()
+    const navigate = useNavigate()
+    let from = location.state?.from?.pathnme || '/'
     const [displayname, setDisplayName] = useState('')
     const [createUserWithEmailAndPassword, emailError,] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [signInWithGoogle, googleError] = useSignInWithGoogle(auth, { sendEmailVerification: true });
@@ -39,13 +42,16 @@ const SignUp = () => {
         e.preventDefault()
         await signInWithGoogle()
             .then(res => {
-                console.log("user created")
+                navigate(from, { replace: true });
             })
         await sendEmailVerification()
     }
     const handleSubmit = e => {
         e.preventDefault()
         createUserWithEmailAndPassword(email, pass)
+            .then(res => {
+                navigate(from, { replace: true });
+            })
     }
     return (
         <div className='form-container'>
@@ -73,7 +79,7 @@ const SignUp = () => {
 
 
                     <Button variant="primary" type="submit">
-                        Submit
+                        Sign up
                     </Button>
                     <p className='mt-1'>ALready have an account ?
                         <Link className='text-decoration-none' to='/login'> Login</Link>
