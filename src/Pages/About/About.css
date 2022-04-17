@@ -1,0 +1,15 @@
+.about-container {
+    margin-top: 130px;
+}
+
+.about-container>* {
+    flex-basis: 50%;
+}
+
+.image img {
+    width: 400px;
+}
+
+.goals {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

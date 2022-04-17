@@ -9,7 +9,7 @@ const Services = () => {
             .then(data => setServices(data))
     }, [])
     return (
-        <div className='services-container container d-flex justify-content-center align-items-center flex-column'>
+        <div id='services' className='services-container container d-flex justify-content-center align-items-center flex-column'>
             <h2 className='heading text-center'>My services</h2>
             <div className="float bg-info mt-3" ></div>
             <div className="services">
