@@ -1,0 +1,10 @@
+.blogs-container {
+    width: 400px;
+    margin: 140px auto;
+}
+
+@media (min-width : 768px) {
+    .blogs-container {
+        width: 600px;
+    }
+}
