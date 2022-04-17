@@ -1,0 +1,44 @@
+[
+    {
+        "id": "625be5227fb8afde8415bf3d",
+        "price": "$943.38",
+        "picture": "https://i.ibb.co/kgJhccs/image-removebg-preview-11.png",
+        "name": "Tooth Decay",
+        "desc": "Tooth decay occurs when bacteria form a film, called plaque, on the surface of teeth. The bacteria produce acids from the sugars in food. "
+    },
+    {
+        "id": "625be522a3d3f1f808069d2e",
+        "price": "$562.69",
+        "picture": "https://i.ibb.co/kgJhccs/image-removebg-preview-11.png",
+        "name": "Gum Disease",
+        "desc": "Gingivitis is the early stage and mild form of gum or periodontal disease. It is a bacterial infection that is caused by the buildup of plaque."
+    },
+    {
+        "id": "625be522cd9f6f6fe489d128",
+        "price": "$932.25",
+        "picture": "https://i.ibb.co/kgJhccs/image-removebg-preview-11.png",
+        "name": "Bad Breath",
+        "desc": "Bad breath or halitosis is one of the most common dental problems. It is also among the most distressing.,"
+    },
+    {
+        "id": "625be52275994bb4428fe13f",
+        "price": "$716.64",
+        "picture": "https://i.ibb.co/kgJhccs/image-removebg-preview-11.png",
+        "name": "Root Infection",
+        "desc": "A root infection is treated by a root canal. And, although many of us cringe in fear at the thought of having a root canal performed. "
+    },
+    {
+        "id": "625be522c62d1f7be5427ea5",
+        "price": "$952.57",
+        "picture": "https://i.ibb.co/kgJhccs/image-removebg-preview-11.png",
+        "name": "Enamel Erosion",
+        "desc": "Enamel erosion leads to teeth that are very sensitive, weaker, and more susceptible to cracks, chips, and cupping. The lost enamel cannot be restored on teeth that have suffered enamel erosion."
+    },
+    {
+        "id": "625be522df60a81d67779d0a",
+        "price": "$548.09",
+        "picture": "https://i.ibb.co/kgJhccs/image-removebg-preview-11.png",
+        "name": "Teeth Grinding",
+        "desc": "Bruxism is the dental term for when you grind your teeth. Grinding most often occurs while you sleep but can also happen while you are awake. "
+    }
+]

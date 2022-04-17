@@ -1,0 +1,20 @@
+.article {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.article .img {
+    position: relative;
+    width: 300px;
+}
+
+.article .img2 {}
+
+.article .img::before {
+    content: '';
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
