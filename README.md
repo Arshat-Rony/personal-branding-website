@@ -1,6 +1,6 @@
 # Welcome to  EMily Jhonson services
 
-[Emily Jhonson](https://emily-jhonson-services.firebaseapp.com/home)
+[Emily Jhonson See the Live site here](https://emily-jhonson-services.firebaseapp.com/home)
 
 ## Project Description
 
