@@ -7,9 +7,9 @@
 ```javascript
 ```
  * Project started with A simple description about me.
- * THen added some service what I provide.
+ * Then added some service what I provide.
  * Then described my written blogs.
-
+* I have used Proper authentication system for an user.
 ## Used Library in this Project 
 
 * ReactJS
