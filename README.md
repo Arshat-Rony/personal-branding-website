@@ -18,6 +18,8 @@
 * React Router Hooks
 * React Icons for Icons
 
+## Author 
 
+* Arshat Rony
 
 
