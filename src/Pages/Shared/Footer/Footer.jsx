@@ -7,7 +7,8 @@ const Footer = () => {
             <div className="footer py-5 container d-flex justify-content-between align-items-center flex-column flex-md-row">
                 <div>
                     <h3 className='heading'>Emily Jhonson</h3>
-                    <p>Contact - +88093598</p>
+                    <p>Dhaka,Appolo Hospital.</p>
+                    <p>Contact Me :  +88093598</p>
                 </div>
                 <div className="menu mt-4 mt-md-0 d-flex flex-column">
                     <small className='mt-3'>About</small>

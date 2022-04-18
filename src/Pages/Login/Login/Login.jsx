@@ -4,8 +4,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from "../../../images/others/google.png"
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
-import { useSendEmailVerification } from 'react-firebase-hooks/auth';
+import { useSendEmailVerification, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../../../firebse.init';
+import { async } from '@firebase/util';
+import { sendPasswordResetEmail } from 'firebase/auth';
+import { toast, ToastContainer } from 'react-toastify';
+
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -17,6 +21,7 @@ const Login = () => {
     const [sendEmailVerification] = useSendEmailVerification(
         auth
     );
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const [signInWithEmailAndPassword, emailError,] = useSignInWithEmailAndPassword(auth);
     let errorElement;
     if (googleError) {
@@ -30,10 +35,20 @@ const Login = () => {
     const handlePass = e => {
         setPass(e.target.value)
     }
+    const handleResetPass = async (email) => {
+        if (email) {
+            await sendPasswordResetEmail(email)
+                .then(res => {
+                    toast("Check mail to reset password")
+                })
+
+        }
+
+    }
     const handleSubmit = e => {
         e.preventDefault()
         signInWithEmailAndPassword(email, pass)
-            .then(ers => {
+            .then(res => {
                 navigate(from, { replace: true });
             })
     }
@@ -47,6 +62,7 @@ const Login = () => {
     }
     return (
         <div className='form-container'>
+            <ToastContainer />
             <div style={{ width: "450px" }} className="form mx-auto border-primary border p-4 rounded-3">
                 <h3 className='heading text-center'>Please Sign In</h3>
                 <Form className="mx-auto text-start" onSubmit={handleSubmit}>
@@ -57,8 +73,10 @@ const Login = () => {
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control onBlur={handlePass} type="password" required />
+                        <Form.Control onBlur={handlePass} type="password" />
                     </Form.Group>
+
+                    <Link onClick={() => handleResetPass(email)} className='text-decoration-none' to='/login'>Forget Password</Link>
 
                     <div>
                         <p>{errorElement}</p>
@@ -81,8 +99,11 @@ const Login = () => {
                     <img style={{ width: "40px" }} src={img} alt="" />
                     Continue with Google
                 </div>
+
             </div>
+
         </div>
+
     );
 };
 
